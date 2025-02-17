@@ -1,6 +1,6 @@
 // 引入 Sequelize 中的 DataTypes 和 Model 类，以及自定义的数据库配置
 import { DataTypes, Model } from 'sequelize';
-import sequelize from '../config/database';
+import sequelize from '@/config/database';
 
 // 定义 UserAttributes 接口，描述 User 模型的属性
 interface UserAttributes {
