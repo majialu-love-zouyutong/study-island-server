@@ -3,7 +3,7 @@ import { DataTypes, Model } from 'sequelize';
 import sequelize from '@/config/database';
 
 // 定义 UserAttributes 接口，描述 User 模型的属性
-interface UserAttributes {
+interface IUser {
   id: number;
   username: string;
   email: string;
@@ -11,7 +11,7 @@ interface UserAttributes {
 }
 
 // 创建 User 类，继承自 Model 并实现 UserAttributes 接口
-class User extends Model<UserAttributes> implements UserAttributes {
+class User extends Model<IUser> implements IUser {
   public id!: number; // 用户ID，主键
   public username!: string; // 用户名
   public email!: string; // 用户邮箱
@@ -51,3 +51,5 @@ User.init(
 User.sync({ force: true }).then(() => {
   console.log('User table created successfully!');
 });
+
+export default User;

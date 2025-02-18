@@ -1,3 +1,10 @@
-import { multiple } from "@/utils/multiple";
+import express from 'express';
+import cors from 'cors';
+import router from '@/routes';
 
-console.log(multiple(2, 5));
+const app = express();
+
+app.use(express.json());
+app.use(cors());
+
+app.use('/api/users', router.userRouter);
