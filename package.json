@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
+  "types": "./dist/index.d.mts",
   "exports": {
-    "require": {
-      "types": "./dist/index.d.cts",
-      "default": "./dist/index.cjs"
-    },
     "import": {
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
@@ -26,12 +22,14 @@
   "license": "ISC",
   "dependencies": {
     "@types/express": "^5.0.0",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mysql2": "^3.12.0",
     "sequelize": "^6.37.5"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/node": "^22.13.4",
     "cors": "^2.8.5",
@@ -40,6 +38,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "bcrypt",
       "esbuild"
     ]
   }

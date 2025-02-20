@@ -1,7 +1,7 @@
 import { Sequelize, type Dialect } from 'sequelize';
 await import('dotenv/config');
 
-const sequelize = new Sequelize({
+export const sequelize = new Sequelize({
   host: process.env.DB_HOST || '127.0.0.1',
   dialect: process.env.DB_DIALECT as Dialect || 'mysql',
   port: parseInt(process.env.DB_PORT || '3306'),
@@ -10,4 +10,3 @@ const sequelize = new Sequelize({
   password: process.env.DB_PASSWORD || '',
 });
 
-export default sequelize;
